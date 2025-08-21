@@ -97,7 +97,9 @@ export default function MainCanvasDemo() {
         padding: 16,
       }}
     >
-      <div style={{ fontWeight: 700, marginBottom: 8 }}>메인 스레드 캔버스</div>
+      <h2 className="text-white" style={{ fontWeight: 700, marginBottom: 8 }}>
+        메인 스레드 캔버스
+      </h2>
 
       <div
         style={{
@@ -121,7 +123,7 @@ export default function MainCanvasDemo() {
             width: 200,
           }}
         />
-        <span style={{ fontSize: 12, color: "#99a3ad" }}>
+        <span style={{ fontSize: 12, color: "#99a3ad", width: 100 }}>
           입력 지연:{" "}
           <b style={{ color: latency > 80 ? "#f38ba3" : "#65d5a1" }}>
             {latency}ms
@@ -138,16 +140,17 @@ export default function MainCanvasDemo() {
             borderRadius: 10,
             cursor: "pointer",
           }}
+          className="disabled:opacity-50"
         >
-          메인에서 실행(5s)
+          {running ? "로딩중..." : "메인에서 실행(5s)"}
         </button>
       </div>
 
       <canvas
         ref={cvRef}
         style={{
-          width: 320,
-          height: 180,
+          width: 400,
+          height: 400,
           border: "1px solid #2a3142",
           borderRadius: 8,
         }}

@@ -26,12 +26,13 @@ export default function Clock() {
         }}
         onClick={() => setConsoleOn((v) => !v)}
       >
-        {consoleOn ? "콘솔 로그 OFF" : "콘솔 로그 ON"}
-
-        <div className="flex items-center justify-center">
-          <ClientTime consoleOn={consoleOn} />
-          <WorkerTime consoleOn={consoleOn} />
-        </div>
+        {consoleOn ? "끄기" : "켜기"}
+        {consoleOn && (
+          <div className="flex items-center justify-center">
+            <ClientTime consoleOn={consoleOn} />
+            <WorkerTime consoleOn={consoleOn} />
+          </div>
+        )}
       </button>
     </div>
   );

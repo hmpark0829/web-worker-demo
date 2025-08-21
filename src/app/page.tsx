@@ -1,20 +1,15 @@
 "use client";
 
-import MainTread from "@/components/MainTread";
+import Clock from "@/components/Clock";
+import Experience from "@/components/section/Experience";
 
 export default function Home() {
-  function busyLoop(ms = 800) {
-    const t0 = performance.now();
-    while (performance.now() - t0 < ms) {
-      // CPU 바운드 연산
-      Math.sqrt(Math.random());
-    }
-  }
-
   return (
-    <div>
-      데모 페이지입니다!
-      <MainTread />
+    <div className="h-screen w-full flex items-center justify-center bg-green-300">
+      <div className="fixed top-50 left-0 w-full z-50">
+        <Clock />
+      </div>
+      <Experience />
     </div>
   );
 }
