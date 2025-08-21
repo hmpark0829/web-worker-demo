@@ -28,12 +28,6 @@ export default function WorkerCanvasDemo() {
         { type: "INIT", canvas: off, width: cv.width, height: cv.height },
         [off]
       );
-    } else {
-      // (옵션) 미지원 브라우저에서 안내 메시지 표시만
-      const ctx = cv.getContext("2d")!;
-      ctx.fillStyle = "#99a3ad";
-      ctx.font = "12px system-ui";
-      ctx.fillText("OffscreenCanvas 미지원: 폴백 필요", 8, 20);
     }
 
     return () => {
